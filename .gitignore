@@ -60,3 +60,7 @@ typings/
 # IDE
 .idea
 
+
+# App Specifics
+/dist
+

@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { renderRoutes } from 'react-router-config';
 
 class AppRoot extends Component {
@@ -12,5 +13,11 @@ class AppRoot extends Component {
     );
   }
 }
+
+AppRoot.propTypes = {
+  route: PropTypes.shape({
+    routes: PropTypes.array,
+  }).isRequired,
+};
 
 export default AppRoot;

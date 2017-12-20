@@ -1,22 +1,26 @@
-import Root from '../client/root.jsx';
-import Home from '../client/components/pages/home/index.jsx';
-import About from '../client/components/pages/about/index.jsx';
+import Root from '../client/root';
+import Home from '../client/components/pages/home';
+import About from '../client/components/pages/about';
 
 const routes = [
-  { component: Root,
+  {
+    component: Root,
     routes: [
-      { path: '/',
+      {
+        path: '/',
         exact: true,
-        component: Home
+        component: Home,
       },
-      { path: '/home',
-        component: Home
+      {
+        path: '/home',
+        component: Home,
       },
-      { path: '/about',
-        component: About
-      }
-    ]
-  }
+      {
+        path: '/about',
+        component: About,
+      },
+    ],
+  },
 ];
 
 export default routes;
