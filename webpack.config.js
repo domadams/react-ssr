@@ -23,6 +23,9 @@ module.exports = [
     module: {
       loaders: commonLoaders,
     },
+    resolve: {
+      extensions: [' ', '.js', '.jsx'],
+    },
   },
   {
     // The configuration for the server-side rendering
@@ -50,6 +53,9 @@ module.exports = [
         `${nodeDir}/react/react-dom.min.js`,
       ],
       rules: commonLoaders,
+    },
+    resolve: {
+      extensions: [' ', '.js', '.jsx'],
     },
   },
 ];
