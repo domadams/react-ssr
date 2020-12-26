@@ -15,7 +15,11 @@ import htmlTemplate from './html-template';
 
 export default () => (req, res) => {
   const context = {};
-  const content = renderToString(<StaticRouter location={req.url} context={context}>{renderRoutes(routes)}</StaticRouter>); // eslint-disable-line max-len
+  const content = renderToString(
+    <StaticRouter location={req.url} context={context}>
+      {renderRoutes(routes)}
+    </StaticRouter>,
+  );
 
   res.status(200).send(htmlTemplate('Blue Monkey', content));
 };

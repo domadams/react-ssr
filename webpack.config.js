@@ -1,4 +1,5 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals')
 
 const nodeDir = `${__dirname}/node_modules`;
 
@@ -14,6 +15,7 @@ module.exports = [
   {
     // The configuration for the client
     name: 'client-side rendering',
+    mode: "production",
     context: path.resolve(__dirname),
     entry: './src/client/app-router.jsx',
     output: {
@@ -21,7 +23,7 @@ module.exports = [
       path: path.resolve(__dirname, 'dist/public'),
     },
     module: {
-      loaders: commonLoaders,
+      rules: commonLoaders,
     },
     resolve: {
       extensions: [' ', '.js', '.jsx'],
@@ -30,6 +32,7 @@ module.exports = [
   {
     // The configuration for the server-side rendering
     name: 'server-side rendering',
+    mode: "production",
     entry: './src/server/server.js',
     target: 'node',
     output: {
@@ -39,14 +42,11 @@ module.exports = [
       libraryTarget: 'commonjs2',
     },
     node: {
-      console: false,
       global: false,
-      process: false,
-      Buffer: false,
       __filename: false,
       __dirname: false,
     },
-    externals: /^[a-z\-0-9]+$/,
+    externals: [nodeExternals()],
     module: {
       noParse: [
         `${nodeDir}/react/react.min.js`,

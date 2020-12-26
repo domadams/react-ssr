@@ -7,8 +7,10 @@
  ***************************************************** */
 import express from 'express';
 import { join as joinPath } from 'path';
+import helmet from 'helmet';
 import router from './server-router';
 
 export default () => express()
   .use(express.static(joinPath(__dirname, 'public')))
+  .use(helmet())
   .use(router());
