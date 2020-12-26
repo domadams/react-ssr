@@ -1,5 +1,7 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const nodeDir = `${__dirname}/node_modules`;
 
@@ -9,6 +11,15 @@ const commonLoaders = [
     exclude: /node_modules/,
     use: 'babel-loader',
   },
+  {
+    test: /\.css$/,
+    use: [
+      {
+        loader: MiniCssExtractPlugin.loader,
+      },
+      'css-loader',
+    ],
+  }
 ];
 
 module.exports = [
@@ -39,7 +50,6 @@ module.exports = [
       path: path.resolve(__dirname, 'dist'),
       publicPath: './public',
       filename: 'server.generated.js',
-      libraryTarget: 'commonjs2',
     },
     node: {
       global: false,
@@ -54,8 +64,18 @@ module.exports = [
       ],
       rules: commonLoaders,
     },
+    optimization: {
+      minimizer: [
+        new CssMinimizerPlugin(),
+      ],
+    },
     resolve: {
       extensions: [' ', '.js', '.jsx'],
     },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: 'public/[name].css',
+      }),
+    ]
   },
 ];

@@ -12,6 +12,7 @@ const htmlTemplate = (title, content) => (
                 <meta name="keywords" content="Keywords go here">
                 <meta name="description" content="What is this here to do?">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+                <link href="/main.css" rel="stylesheet">
                 <title>${title}</title>
             </head>
             <body>
