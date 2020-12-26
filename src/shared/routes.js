@@ -1,6 +1,6 @@
-import Root from '../client/root';
-import Home from '../client/components/pages/home';
-import About from '../client/components/pages/about';
+import Root from './root';
+import Home from './components/pages/home';
+import About from './components/pages/about';
 
 const routes = [
   {

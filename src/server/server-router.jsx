@@ -10,7 +10,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 
-import routes from '../routes/routes';
+import routes from '../shared/routes';
 import htmlTemplate from './html-template';
 
 export default () => (req, res) => {
