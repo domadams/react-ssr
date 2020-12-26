@@ -10,4 +10,3 @@ const server = app().listen(
   '0.0.0.0',
   () => console.log(`Blue Monkey started ${JSON.stringify(server.address())}`), // eslint-disable-line no-console
 );
-

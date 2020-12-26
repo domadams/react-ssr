@@ -4,10 +4,11 @@ import { renderRoutes } from 'react-router-config';
 
 class AppRoot extends Component {
   render() {
+    const { route: { routes } } = this.props;
     return (
       <div>
         <main>
-          {renderRoutes(this.props.route.routes)}
+          {renderRoutes(routes)}
         </main>
       </div>
     );
@@ -16,7 +17,7 @@ class AppRoot extends Component {
 
 AppRoot.propTypes = {
   route: PropTypes.shape({
-    routes: PropTypes.array,
+    routes: PropTypes.instanceOf(Array),
   }).isRequired,
 };
 

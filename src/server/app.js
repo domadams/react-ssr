@@ -12,4 +12,3 @@ import router from './server-router';
 export default () => express()
   .use(express.static(joinPath(__dirname, 'public')))
   .use(router());
-
