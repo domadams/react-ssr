@@ -3,7 +3,7 @@ Simple React SSR server
 
 ## Getting Started
 
-**Prerequisites** Please ensure that you have Node.js v8.x.x installed [nodejs.org](http://nodejs.org/dist/v6.6.0/) once this is installed upgrade npm (`$ npm install -g npm`).
+**Prerequisites** Please ensure that you have Node.js v14.x.x installed [nodejs.org](http://nodejs.org/dist/v14.15.3/) once this is installed upgrade npm (`$ npm install -g npm`).
 
 To get started clone this repository, then install the dependencies:
 ```
