@@ -1,5 +1,5 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals')
+const nodeExternals = require('webpack-node-externals');
 
 const nodeDir = `${__dirname}/node_modules`;
 
@@ -15,7 +15,7 @@ module.exports = [
   {
     // The configuration for the client
     name: 'client-side rendering',
-    mode: "production",
+    mode: 'production',
     context: path.resolve(__dirname),
     entry: './src/client/app-router.jsx',
     output: {
@@ -32,7 +32,7 @@ module.exports = [
   {
     // The configuration for the server-side rendering
     name: 'server-side rendering',
-    mode: "production",
+    mode: 'production',
     entry: './src/server/server.js',
     target: 'node',
     output: {
