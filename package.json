@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/domadams/react-ssr#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "helmet": "^4.2.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
